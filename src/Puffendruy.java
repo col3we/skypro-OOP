@@ -1,4 +1,4 @@
-public class Puffendruy extends hogwarts {
+public class Puffendruy extends Hogwarts {
     private int industriousness;
     private int loyalty;
     private int honesty;
@@ -14,28 +14,27 @@ public class Puffendruy extends hogwarts {
         return industriousness;
     }
 
-    public void setIndustriousness(int industriousness) {
-        this.industriousness = industriousness;
-    }
-
     public int getLoyalty() {
         return loyalty;
-    }
-
-    public void setLoyalty(int loyalty) {
-        this.loyalty = loyalty;
     }
 
     public int getHonesty() {
         return honesty;
     }
 
-    public void setHonesty(int honesty) {
-        this.honesty = honesty;
-    }
-
     public void showProperties() {
         super.showProperties();
         System.out.println("Трудолюбие: " + industriousness + ", Верность: " + loyalty + ", Честность: " + honesty);
+    }
+
+    public void compare(Puffendruy other) {
+        int sumThis = this.industriousness + this.loyalty + this.honesty;
+        int sumOther = other.getIndustriousness() + other.getLoyalty() + other.getHonesty();
+
+        if (sumThis > sumOther) {
+            System.out.println(this.getName() + " лучший Пуффендуец, чем " + other.getName());
+        } else {
+            System.out.println(other.getName() + " лучший Пуффендуец, чем " + this.getName());
+        }
     }
 }

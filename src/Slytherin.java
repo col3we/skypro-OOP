@@ -1,11 +1,12 @@
-public class Slytherin extends hogwarts {
+public class Slytherin extends Hogwarts {
     private int trick;
     private int determination;
     private int ambition;
     private int resourcefulness;
     private int desireForPower;
 
-    public Slytherin(String name, int magic, int transgression, int trick, int determination, int ambition, int resourcefulness, int desireForPower) {
+    public Slytherin(String name, int magic, int transgression, int trick, int determination, int ambition,
+                     int resourcefulness, int desireForPower) {
         super(name, magic, transgression);
         this.trick = trick;
         this.determination = determination;
@@ -18,44 +19,37 @@ public class Slytherin extends hogwarts {
         return trick;
     }
 
-    public void setTrick(int trick) {
-        this.trick = trick;
-    }
-
     public int getDetermination() {
         return determination;
-    }
-
-    public void setDetermination(int determination) {
-        this.determination = determination;
     }
 
     public int getAmbition() {
         return ambition;
     }
 
-    public void setAmbition(int ambition) {
-        this.ambition = ambition;
-    }
-
     public int getResourcefulness() {
         return resourcefulness;
-    }
-
-    public void setResourcefulness(int resourcefulness) {
-        this.resourcefulness = resourcefulness;
     }
 
     public int getDesireForPower() {
         return desireForPower;
     }
 
-    public void setDesireForPower(int desireForPower) {
-        this.desireForPower = desireForPower;
-    }
-
     public void showProperties() {
         super.showProperties();
-        System.out.println("Хитрость: " + trick + ", Решительность: " + determination + ", Амбициозность: " + ambition + ", Находчивость: " + resourcefulness + ", Жажда власти: " + desireForPower);
+        System.out.println("Хитрость: " + trick + ", Решительность: " + determination + ", Амбициозность: " + ambition +
+                ", Находчивость: " + resourcefulness + ", Жажда власти: " + desireForPower);
+    }
+
+    public void compare(Slytherin other) {
+        int sumThis = this.trick + this.determination + this.ambition + this.resourcefulness + this.desireForPower;
+        int sumOther = other.getTrick() + other.getDetermination() + other.getAmbition() + other.getResourcefulness() +
+                other.getDesireForPower();
+
+        if (sumThis > sumOther) {
+            System.out.println(this.getName() + " лучший Слизеринец, чем " + other.getName());
+        } else {
+            System.out.println(other.getName() + " лучший Слизеринец, чем " + this.getName());
+        }
     }
 }

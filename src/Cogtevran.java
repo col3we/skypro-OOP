@@ -1,4 +1,4 @@
-public class Cogtevran extends hogwarts {
+public class Cogtevran extends Hogwarts {
     private int mind;
     private int wit;
     private int wisdom;
@@ -16,32 +16,16 @@ public class Cogtevran extends hogwarts {
         return mind;
     }
 
-    public void setMind(int mind) {
-        this.mind = mind;
-    }
-
     public int getWit() {
         return wit;
-    }
-
-    public void setWit(int wit) {
-        this.wit = wit;
     }
 
     public int getWisdom() {
         return wisdom;
     }
 
-    public void setWisdom(int wisdom) {
-        this.wisdom = wisdom;
-    }
-
     public int getCreativity() {
         return creativity;
-    }
-
-    public void setCreativity(int creativity) {
-        this.creativity = creativity;
     }
 
     public void showProperties() {
@@ -49,4 +33,14 @@ public class Cogtevran extends hogwarts {
         System.out.println("Ум: " + mind + ", Мудрость: " + wisdom + ", Острота ума: " + wit + ", Творчество: " + creativity);
     }
 
+    public void compare(Cogtevran other) {
+        int sumThis = this.mind + this.wit + this.wisdom + this.creativity;
+        int sumOther = other.getMind() + other.getWit() + other.getWisdom() + other.getCreativity();
+
+        if (sumThis > sumOther) {
+            System.out.println(this.getName() + " лучший Когтевранец, чем " + other.getName());
+        } else {
+            System.out.println(other.getName() + " лучший Когтевранец, чем " + this.getName());
+        }
+    }
 }
